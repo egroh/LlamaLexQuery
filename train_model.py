@@ -3,10 +3,10 @@ from transformers import AutoTokenizer, AutoModelForQuestionAnswering, TrainingA
 import pandas as pd
 import torch
 
-
 # Paths
 data_dir = "./data"
 model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
+
 
 # Load preprocessed data
 def load_dataset(data_path):
@@ -17,8 +17,10 @@ def load_dataset(data_path):
     sample_size = 10  # Number of examples to use
     return dataset.select(range(min(sample_size, len(dataset))))  # Ensure it doesn't exceed the dataset size
 
+
 def add_answer_positions(dataset, tokenizer):
     """Add start and end positions for answers in the dataset."""
+
     def process(examples):
         start_positions = []
         end_positions = []
@@ -44,6 +46,7 @@ def add_answer_positions(dataset, tokenizer):
 
     return dataset.map(process, batched=True)
 
+
 def tokenize_data(dataset, tokenizer):
     """Tokenize dataset and add answer positions."""
     dataset = dataset.map(
@@ -57,6 +60,7 @@ def tokenize_data(dataset, tokenizer):
         batched=True
     )
     return add_answer_positions(dataset, tokenizer)
+
 
 if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -95,7 +99,6 @@ if __name__ == "__main__":
             "end_positions": torch.tensor([f["end_positions"] for f in data]),
         }
     )
-
 
     # Train and save
     trainer.train()

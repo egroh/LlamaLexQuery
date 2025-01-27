@@ -8,16 +8,19 @@ json_path = os.path.join(data_dir, "CUAD_v1.json")
 csv_path = os.path.join(data_dir, "master_clauses.csv")
 label_dir = os.path.join(data_dir, "label_group_xlsx")
 
+
 # Function to load SQuAD-style JSON
 def load_squad_json(json_path):
     """Load SQuAD-style JSON file."""
     with open(json_path, "r") as f:
         return json.load(f)
 
+
 # Function to load master clauses CSV
 def load_master_csv(csv_path):
     """Load master clauses CSV file."""
     return pd.read_csv(csv_path)
+
 
 # Function to load label group Excel files
 def load_label_groups(label_dir):
@@ -31,6 +34,7 @@ def load_label_groups(label_dir):
         return pd.concat(dataframes, ignore_index=True)
     except Exception as e:
         raise RuntimeError(f"Error loading label group Excel files: {e}")
+
 
 # Format SQuAD-style data
 def format_squad_data(squad_data):
@@ -46,6 +50,7 @@ def format_squad_data(squad_data):
                 questions.append(question)
                 answers.append(answer)
     return pd.DataFrame({"context": contexts, "question": questions, "answer": answers})
+
 
 # Format additional label data
 def format_additional_data(master_csv, label_groups):
@@ -69,6 +74,7 @@ def format_additional_data(master_csv, label_groups):
         answers.append(answer)
 
     return pd.DataFrame({"context": contexts, "question": questions, "answer": answers})
+
 
 if __name__ == "__main__":
     # Load data

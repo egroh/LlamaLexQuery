@@ -5,9 +5,11 @@ from datasets import Dataset
 # Paths
 model_dir = "../models/bert-cuad"
 
+
 def load_test_data(data_path):
     """Load test dataset."""
     return Dataset.load_from_disk(data_path)
+
 
 if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(model_dir)

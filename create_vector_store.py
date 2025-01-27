@@ -23,6 +23,7 @@ try:
 except chromadb.errors.InvalidCollectionException:  # Adjusted to use the correct exception
     collection = client.create_collection(collection_name)
 
+
 # Load contracts from text files
 def load_contracts(txt_dir):
     """Load contracts as documents from the specified directory."""
@@ -33,6 +34,7 @@ def load_contracts(txt_dir):
                 content = f.read()
                 documents.append({"content": content, "metadata": {"file_name": file_name}})
     return documents
+
 
 # Generate embeddings and add to ChromaDB
 def process_contracts():
@@ -56,6 +58,7 @@ def process_contracts():
                     )
             except Exception as e:
                 print(f"Error processing chunk {idx} of {doc['metadata']['file_name']}: {e}")
+
 
 if __name__ == "__main__":
     process_contracts()

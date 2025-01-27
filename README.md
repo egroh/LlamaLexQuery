@@ -129,6 +129,10 @@ project/
 ├── preprocess_data.py         # Preprocesses CUAD dataset
 ├── train_model.py             # Trains the fine-tuned BERT model
 ├── create_vector_store.py     # Builds the vector database
+├── css.py                     # Frontend
+├── evaluate_model.py          # Post-Train
+├── inference.py               # Evaluate and Check
+├── run_interface.py           # Gradio Webpage
 │
 ├── models/
 │   └── bert-cuad/             # Pre-trained BERT model
@@ -163,7 +167,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any questions, feel free to reach out:
 
-- **Email**: [vijay.murugan@ip-paris.fr](vijay\:your-email@example.com)
 - **GitHub**: [vijaysr4](https://github.com/vijaysr4)
 
 ```

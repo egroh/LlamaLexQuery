@@ -1,3 +1,5 @@
+![LlamaLexQuery Logo](./images/llamalexquery_logo.png)
+
 # **LLAMA-based Contract Query System**
 
 Welcome to the **LexQuery Contract Query System**—a powerful application for querying legal contracts stored in **ChromaDB**. This system leverages **LLAMA embeddings**, **fine-tuned BERT models**, and an interactive **Gradio interface** for precise and efficient legal query resolution.

@@ -1,0 +1,10 @@
+# Ignore all contents of the data folder
+data/*
+
+# Allow the data folder itself
+!data/
+
+# Optional: Allow specific files or subfolders inside data
+# Uncomment the lines below if needed:
+# !data/important_file.txt
+# !data/subfolder/

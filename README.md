@@ -15,6 +15,14 @@ Welcome to the **LexQuery Contract Query System**—a powerful application for q
 
 ---
 
+## **Working**
+
+Below is an example of the Gradio interface in action:
+
+![Interface](./images/demo_screenshot.png)
+
+---
+
 ## **Architecture**
 
 The application integrates the following key components:
@@ -112,14 +120,6 @@ The system uses the **LLAMA embedding model** (`nomic-embed-text`) to generate v
 
 ---
 
-## **Working**
-
-Below is an example of the Gradio interface in action:
-
-
-
----
-
 ## **Folder Structure**
 
 ```
@@ -168,6 +168,7 @@ This project is licensed under the [MIT License](LICENSE).
 For any questions, feel free to reach out:
 
 - **GitHub**: [vijaysr4](https://github.com/vijaysr4)
+- **GitHub**: [egroh](https://github.com/egroh)
 
 ```
 ```
